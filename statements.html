@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Bank Statement</title>
+  <style>
+    :root {
+      --primary:#0b61a4;
+      --bg:#f4f6fb;
+      --card:#fff;
+      --muted:#6b7280;
+    }
+    body {
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:var(--bg);
+      color:#111;
+      padding:20px;
+    }
+    .header {
+      text-align:center;
+      margin-bottom:20px;
+    }
+    .header h1 {margin:0; color:var(--primary);}
+    .statement-info {
+      background:var(--card);
+      padding:16px;
+      border-radius:8px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      margin-bottom:20px;
+    }
+    .statement-info p {margin:4px 0; color:var(--muted);}
+    table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    }
+    th, td {
+      padding:12px;
+      border-bottom:1px solid #ddd;
+      text-align:left;
+      font-size:14px;
+    }
+    th {
+      background:var(--primary);
+      color:#fff;
+    }
+    tr:last-child td {border-bottom:none;}
+    .credit {color:green; font-weight:bold;}
+    .debit {color:red; font-weight:bold;}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Bank Statement</h1>
+    <p>Demo Template for Learning Purpose Only</p>
+  </div>
+
+  <!-- Account Info -->
+  <div class="statement-info">
+    <p><strong>Customer Name:</strong> John Doe</p>
+    <p><strong>Account Number:</strong> 1234 5678 9000</p>
+    <p><strong>Statement Period:</strong> 01 Aug 2025 – 31 Aug 2025</p>
+    <p><strong>Branch:</strong> Main Branch, City</p>
+  </div>
+
+  <!-- Transactions -->
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Debit</th>
+        <th>Credit</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01-08-2025</td>
+        <td>Opening Balance</td>
+        <td>-</td>
+        <td class="credit">₹ 50,000.00</td>
+        <td>₹ 50,000.00</td>
+      </tr>
+      <tr>
+        <td>05-08-2025</td>
+        <td>ATM Withdrawal</td>
+        <td class="debit">₹ 5,000.00</td>
+        <td>-</td>
+        <td>₹ 45,000.00</td>
+      </tr>
+      <tr>
+        <td>10-08-2025</td>
+        <td>Salary Credit</td>
+        <td>-</td>
+        <td class="credit">₹ 55,000.00</td>
+        <td>₹ 1,00,000.00</td>
+      </tr>
+      <tr>
+        <td>15-08-2025</td>
+        <td>Electricity Bill Payment</td>
+        <td class="debit">₹ 2,500.00</td>
+        <td>-</td>
+        <td>₹ 97,500.00</td>
+      </tr>
+      <tr>
+        <td>25-08-2025</td>
+        <td>Online Shopping</td>
+        <td class="debit">₹ 3,200.00</td>
+        <td>-</td>
+        <td>₹ 94,300.00</td>
+      </tr>
+      <tr>
+        <td>31-08-2025</td>
+        <td>Closing Balance</td>
+        <td>-</td>
+        <td>-</td>
+        <td><strong>₹ 94,300.00</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

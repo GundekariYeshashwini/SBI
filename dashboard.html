@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Customer Dashboard</title>
+  <style>
+    :root {
+      --primary:#0b61a4;
+      --bg:#f4f6fb;
+      --card:#fff;
+      --muted:#6b7280;
+    }
+    body {
+      margin:0; font-family: Arial, sans-serif; background:var(--bg); color:#111;
+      display:flex; min-height:100vh;
+    }
+    /* Sidebar */
+    .sidebar {
+      width:240px; background:var(--primary); color:#fff; padding:20px; flex-shrink:0;
+      display:flex; flex-direction:column; justify-content:space-between;
+    }
+    .sidebar h2 {margin:0 0 20px 0; font-size:20px}
+    .nav a {
+      display:block; padding:10px 12px; color:#fff; text-decoration:none; border-radius:6px;
+      margin-bottom:6px; transition:.2s;
+    }
+    .nav a:hover {background:rgba(255,255,255,0.15)}
+    .logout {margin-top:20px; padding:10px; background:#e63946; border:none; color:#fff; border-radius:6px; cursor:pointer;}
+    /* Main area */
+    .main {
+      flex:1; padding:20px; overflow:auto;
+    }
+    h1 {margin-top:0}
+    .cards {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px;
+    }
+    .card {
+      background:var(--card); border-radius:10px; padding:16px; box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    }
+    .card h3 {margin:0 0 10px 0}
+    table {
+      width:100%; border-collapse:collapse;
+    }
+    th,td {
+      padding:10px; border-bottom:1px solid #ddd; text-align:left;
+    }
+    th {background:#f0f4fa}
+    @media(max-width:700px){
+      .sidebar {width:180px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>MyBank</h2>
+      <nav class="nav">
+        <a href="#">Dashboard</a>
+        <a href="#">Accounts</a>
+        <a href="#">Transfers</a>
+        <a href="#">Payments</a>
+        <a href="#">Profile</a>
+      </nav>
+    </div>
+    <button class="logout">Logout</button>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+    <h1>Welcome, John Doe</h1>
+    <p class="muted">Last login: 15 Sept 2025, 10:30 AM</p>
+
+    <!-- Account summary cards -->
+    <section class="cards">
+      <div class="card">
+        <h3>Savings Account</h3>
+        <p>Account No: 1234 5678 9000</p>
+        <p><strong>Balance: ₹ 85,250.50</strong></p>
+      </div>
+      <div class="card">
+        <h3>Fixed Deposit</h3>
+        <p>FD No: 987654321</p>
+        <p><strong>Balance: ₹ 2,50,000.00</strong></p>
+      </div>
+      <div class="card">
+        <h3>Credit Card</h3>
+        <p>Card No: **** 6789</p>
+        <p><strong>Outstanding: ₹ 12,450.75</strong></p>
+      </div>
+    </section>
+
+    <!-- Recent transactions -->
+    <section class="card" style="margin-top:20px">
+      <h3>Recent Transactions</h3>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Description</th><th>Amount</th><th>Balance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>15-09-2025</td><td>UPI Transfer to Rahul</td><td>- ₹ 1,000</td><td>₹ 85,250.50</td></tr>
+          <tr><td>14-09-2025</td><td>Salary Credit</td><td>+ ₹ 50,000</td><td>₹ 86,250.50</td></tr>
+          <tr><td>12-09-2025</td><td>Electricity Bill</td><td>- ₹ 2,500</td><td>₹ 36,250.50</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
